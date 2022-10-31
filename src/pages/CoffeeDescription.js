@@ -2,11 +2,13 @@ import { useParams } from "react-router-dom"
 import Card from "react-bootstrap/Card";
 import Button from 'react-bootstrap/Button';
 
-export default function CoffeeDisplay({ favorites, deleteCoffee }) {
+export default function CoffeeDescription({ coffeeList, addCoffee }) {
 
     let params = useParams()
 
-    const coffee = favorites[params.id]
+    const coffee = coffeeList[params.id]
+
+    console.log(coffee)
 
     return (
 
@@ -26,7 +28,7 @@ export default function CoffeeDisplay({ favorites, deleteCoffee }) {
                         Ingredients: {(coffee.ingredients).join()}
                     </Card.Text>
                 </Card.Body>
-                <Button onClick={() => deleteCoffee(coffee)}>Remove from Favorites</Button>
+                <Button onClick={() => addCoffee(coffee)}>Add to Favorites</Button>
             </Card>
         </div>
     )

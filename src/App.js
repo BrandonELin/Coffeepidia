@@ -7,16 +7,17 @@ import Home from "./pages/Home";
 import CoffeeDisplay from "./pages/CoffeeDisplay";
 import HotCoffee from "./pages/HotCoffee";
 import IcedCoffee from "./pages/IcedCoffee";
-import { useState, useEffect, useReducer } from "react";
-
-let init = false;
+import { useState, useReducer } from "react";
+import CoffeeDescription from "./pages/CoffeeDescription";
+import { v4 as uuid } from 'uuid'
 
 const reducer = (state, action) => {
   switch(action.type) {
-    case 'ADD': 
+    case 'ADD':
+      action.payload.trueid = uuid() 
       return [...state, action.payload]
     case 'DELETE':
-      let filteredArr = state.filter((m) => m.id !== action.payload.id)
+      let filteredArr = state.filter((m) => m.trueid !== action.payload.trueid)
       return filteredArr
     default:
       return state
@@ -24,8 +25,6 @@ const reducer = (state, action) => {
 }
 
 function App() {
-
-  let [coffee, setCoffee] = useState(null)
   let [favorites, dispatch] = useReducer(reducer, [])
   let [coffeeList, setCoffeeList] = useState([])
 
@@ -70,6 +69,8 @@ function App() {
         <Route path="/favorites/:id" element={<CoffeeDisplay favorites={favorites} getCoffee={getCoffee} deleteCoffee={deleteCoffee}/>} />
         <Route path='/drinks/hot' element={<HotCoffee getCoffee={getCoffee} coffeeList={coffeeList} addCoffee={addCoffee}/> } />
         <Route path='/drinks/iced' element={<IcedCoffee getCoffee={getCoffee} coffeeList={coffeeList} addCoffee={addCoffee}/> } />
+        <Route path="/drinks/hot/:id" element={<CoffeeDescription coffeeList={coffeeList} getCoffee={getCoffee} addCoffee={addCoffee}/>} />
+        <Route path="/drinks/iced/:id" element={<CoffeeDescription coffeeList={coffeeList} getCoffee={getCoffee} addCoffee={addCoffee}/>} />
       </Routes>
     </div>
     

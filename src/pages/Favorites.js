@@ -25,7 +25,7 @@ export default function Favorites({favorites, deleteCoffee, addCoffee}) {
 
     
     return ( 
-        <div className="brown">
+        <div className="full brown">
             <h3>Favorites:</h3>
 
             <div>

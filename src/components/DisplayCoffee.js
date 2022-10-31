@@ -1,6 +1,6 @@
-import { useLocation, Link } from "react-router-dom"
-import Card from "react-bootstrap/Card";
-import Button from 'react-bootstrap/Button';
+import { useLocation } from "react-router-dom"
+import FavoriteCoffee from "./FavoriteCoffee";
+import DrinkDescription from "./DrinkDescription";
 
 export default function DisplayCoffee({ coffee, favorites, deleteCoffee, addCoffee, newid }) {
 
@@ -10,37 +10,19 @@ export default function DisplayCoffee({ coffee, favorites, deleteCoffee, addCoff
         if (location.pathname === "/favorites") {
             return (
                 <div>
-                    
-                        <Card style={{width: '28vw'}} className='around bg-dark text-white'>
-                            <Card.Title>
-                                <h1>{coffee.title}</h1>
-                            </Card.Title>
-                            <Link to={`/favorites/${newid}`}>
-                                <Card.Img 
-                                    style={{width: '25vw'}}
-                                    src={coffee.image} 
-                                    alt={coffee.title}
-                                />
-                            </Link>
-                            
-                            <Button onClick={() => deleteCoffee(coffee)}>Remove from Favorites</Button>
-                        </Card>
+                    <FavoriteCoffee coffee={coffee} deleteCoffee={deleteCoffee} newid={newid}/>
+                </div>
+            )
+        } else if (location.pathname === "/drinks/hot"){
+            return (
+                <div>
+                    <DrinkDescription coffee={coffee} addCoffee={addCoffee} temp='hot'/>
                 </div>
             )
         } else {
             return (
                 <div>
-                    <Card style={{width: '28vw'}} className='around bg-dark text-white'>
-                        <Card.Title>
-                            <h1>{coffee.title}</h1>
-                        </Card.Title>
-                        <Card.Img 
-                        style={{width: '25vw'}}
-                        src={coffee.image} 
-                        alt={coffee.title}
-                        />
-                         <Button onClick={() => addCoffee(coffee)}>Add to Favorites</Button>
-                    </Card>
+                    <DrinkDescription coffee={coffee} addCoffee={addCoffee} temp='iced'/>
                 </div>
             )
         }

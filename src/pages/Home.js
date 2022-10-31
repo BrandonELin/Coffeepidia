@@ -1,4 +1,3 @@
-import { useEffect } from "react";
 import Card from "react-bootstrap/Card";
 
 export default function Home() {
