@@ -5,8 +5,8 @@ import Navbar from "react-bootstrap/Navbar";
 
 export default function NavBar() {
     return (
-        <div>
-            <Navbar bg="dark" variant="dark">
+        <>
+            <Navbar bg="primary" variant="dark">
                 <Container>
                     <Navbar.Brand as={Link} to="/">
                         CoffeEncyclopedia
@@ -24,6 +24,6 @@ export default function NavBar() {
                     </Nav>
                 </Container>
             </Navbar>
-        </div>
+        </>
     )
 }

@@ -4,8 +4,8 @@ import Card from "react-bootstrap/Card";
 export default function Home() {
 
     return (
-        <div>
-            <Card border="dark">
+        <div className="brown" style={{height:'100vh'}}>
+            <Card border="dark" className="bg-dark text-white">
                 <Card.Body>
                     <Card.Title>
                         <h1>Welcome to the CoffeEncyclopedia</h1>

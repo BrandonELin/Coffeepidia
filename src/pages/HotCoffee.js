@@ -7,9 +7,8 @@ export default function HotCoffee({ coffeeList, getCoffee, addCoffee }){
 
     useEffect(() => {getCoffee('hot')},[])
 
-    // const loaded = () => {
     return (
-        <div className="coffee-view">
+        <div className="coffee-view brown">
             {coffeeList.map((coffee) => {
                 return (
                     <DisplayCoffee 
@@ -21,12 +20,5 @@ export default function HotCoffee({ coffeeList, getCoffee, addCoffee }){
             })}
         </div>
     )
-    // }
-
-    // const loading = () => {
-    //     return <div>Brewing up some Dirt</div>
-    // }
-
-    // return coffee ? loaded() : loading()
 }
 

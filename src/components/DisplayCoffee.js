@@ -10,24 +10,27 @@ export default function DisplayCoffee({ coffee, favorites, deleteCoffee, addCoff
         if (location.pathname === "/favorites") {
             return (
                 <div>
-                    <Link to={`/favorites/${newid}`}>
-                        <Card style={{width: '28vw'}}>
+                    
+                        <Card style={{width: '28vw'}} className='around bg-dark text-white'>
                             <Card.Title>
                                 <h1>{coffee.title}</h1>
                             </Card.Title>
-                            <Card.Img 
-                                style={{width: '25vw'}}
-                                src={coffee.image} 
-                                alt={coffee.title}
-                            />
+                            <Link to={`/favorites/${newid}`}>
+                                <Card.Img 
+                                    style={{width: '25vw'}}
+                                    src={coffee.image} 
+                                    alt={coffee.title}
+                                />
+                            </Link>
+                            
+                            <Button onClick={() => deleteCoffee(coffee)}>Remove from Favorites</Button>
                         </Card>
-                    </Link>
                 </div>
             )
         } else {
             return (
                 <div>
-                    <Card style={{width: '28vw'}}>
+                    <Card style={{width: '28vw'}} className='around bg-dark text-white'>
                         <Card.Title>
                             <h1>{coffee.title}</h1>
                         </Card.Title>

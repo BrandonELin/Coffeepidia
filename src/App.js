@@ -7,7 +7,6 @@ import Home from "./pages/Home";
 import CoffeeDisplay from "./pages/CoffeeDisplay";
 import HotCoffee from "./pages/HotCoffee";
 import IcedCoffee from "./pages/IcedCoffee";
-import {Provider, useSelector} from 'react-redux'
 import { useState, useEffect, useReducer } from "react";
 
 let init = false;
@@ -39,6 +38,7 @@ function App() {
 
   const deleteCoffee = (coffee) => {
     dispatch({ type: 'DELETE', payload: coffee })
+    navigate("/favorites");
   };
 
   const getCoffee = async (temp) => {

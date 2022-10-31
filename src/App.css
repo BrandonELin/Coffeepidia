@@ -1,3 +1,8 @@
+.brown{
+  background-color: rgb(65, 26, 26);
+  height: 100vh;
+}
+
 .coffee-view{
   display: flex;
   flex-direction: row;
@@ -9,4 +14,14 @@
   display: flex;
   flex-direction: row;
   font-size: 3vh;
+}
+
+.around{
+  margin: 3vh;
+  display: flex;
+  justify-content: space-around;
+}
+
+*{
+  color: white;
 }

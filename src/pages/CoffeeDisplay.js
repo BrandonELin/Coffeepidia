@@ -1,7 +1,8 @@
 import { useParams, useNavigate } from "react-router-dom"
 import Card from "react-bootstrap/Card";
+import Button from 'react-bootstrap/Button';
 
-export default function CoffeeDisplay({ favorites }) {
+export default function CoffeeDisplay({ favorites, deleteCoffee }) {
 
     let params = useParams()
 
@@ -9,7 +10,7 @@ export default function CoffeeDisplay({ favorites }) {
 
     return (
 
-        <div>
+        <div className="brown">
             <Card style={{width: '100vw'}}>
                 <Card.Title>
                     <h1>{coffee.title}</h1>
@@ -25,7 +26,7 @@ export default function CoffeeDisplay({ favorites }) {
                         Ingredients: {(coffee.ingredients).join()}
                     </Card.Text>
                 </Card.Body>
-                
+                <Button onClick={() => deleteCoffee(coffee)}>Remove from Favorites</Button>
             </Card>
         </div>
     )
