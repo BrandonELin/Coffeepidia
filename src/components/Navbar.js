@@ -3,38 +3,23 @@ import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 
-export default function Navbar() {
+export default function NavBar() {
     return (
         <div>
             <Navbar bg="dark" variant="dark">
                 <Container>
-                    <Navbar.Brand
-                        as={Link}
-                        to="/"
-                        onClick={() => {
-                            window.location.pathname === "/" && window.location.reload()
-                        } }
-                    >
+                    <Navbar.Brand as={Link} to="/">
                         CoffeEncyclopedia
                     </Navbar.Brand>
                     <Nav className="me-auto">
-                        <Nav.Link 
-                            as={Link} 
-                            to="/" 
-                            onClick={() => {
-                                window.location.pathname === "/" && window.location.reload() /*causes page reload when clicking on site name*/
-                        }}
-                        >
-                        Home
-                        </Nav.Link>
-                        <Nav.Link as={Link} to="/hot">
+                        <Nav.Link as={Link} to="/drinks/hot">
                             Hot Drinks
                         </Nav.Link>
-                        <Nav.Link as={Link} to="/cold">
+                        <Nav.Link as={Link} to="/drinks/cold">
                             Cold Drinks
                         </Nav.Link>
                         <Nav.Link as={Link} to="/favorites">
-                            Favorites
+                            My Favorites
                         </Nav.Link>
                     </Nav>
                 </Container>

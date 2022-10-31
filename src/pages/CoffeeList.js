@@ -1,4 +1,5 @@
 import { useParams } from "react-router-dom";
+import DisplayCoffee from "../components/DisplayCoffee";
 
 export default function CoffeeList(){
     let params = useParams();
@@ -17,25 +18,25 @@ export default function CoffeeList(){
         }
     };
 
-    const loaded = () => {
-        return (
-            <div>
-                {getCoffee(params).map((coffee) => {
-                    return (
-                        <DisplayCoffee 
-                            key={coffee.id}
-                            coffee={coffee}
-                        />
-                    )
-                })}
-            </div>
-        )
-    }
+    // const loaded = () => {
+    return (
+        <div>
+            {getCoffee(params.temp).map((coffee) => {
+                return (
+                    <DisplayCoffee 
+                        key={coffee.id}
+                        coffee={coffee}
+                    />
+                )
+            })}
+        </div>
+    )
+    // }
 
-    const loading = () => {
-        return <div>Brewing up some Dirt</div>
-    }
+    // const loading = () => {
+    //     return <div>Brewing up some Dirt</div>
+    // }
 
-    return movie ? loaded() : loading()
+    // return coffee ? loaded() : loading()
 }
 

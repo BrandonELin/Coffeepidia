@@ -1,12 +1,14 @@
-import { Link, useLocation } from "react-router-dom";
-import Card from "react-bootstrap/Card";
+import { useLocation, Link } from "react-router-dom"
+import { useDispatch } from 'react-redux'
 
-export default function DisplayCoffee({coffee}){
+
+export default function MovieDisplay({ coffee, favorites, deleteCoffee, addCoffee }) {
 
     let location = useLocation()
+    let dispatch = useDispatch()
 
     const alreadyFavorited = () => {
-        let check = favorites?.find((m) => m.imdbID === coffee.imdbID)
+        let check = favorites?.find((bean) => bean.title === coffee.title)
         if (check) {
             return true
         } else {
@@ -14,30 +16,33 @@ export default function DisplayCoffee({coffee}){
         }
     }
 
+    const handleDelete = (drink) => {
+        dispatch(deleteCoffee(drink))
+    }
+
+    const handleClick = (drink) => {
+        dispatch(addCoffee(drink))
+    }
+
     const loaded = () => {
         if (location.pathname === "/favorites") {
             return (
                 <div>
-                    <Link to={`/favorites/${coffee.imdbID}`}>
-                        <img src={coffee.Poster} alt={coffee.Title} />
+                    <Link to={`/favorites/${coffee.id}`}>
+                        <img src={coffee.image} alt={coffee.title} />
                     </Link>
                     <br />
-                    <button onClick={() => removeFromFavorites(coffee)}>Remove from Favorites</button>
+                    <button onClick={() => handleDelete(coffee)}>Remove from Favorites</button>
                 </div>
             )
         } else {
             return (
                 <div>
-                    <img src={coffee.image} alt={coffee.title} />
                     <h1>{coffee.title}</h1>
-                    
+                    <img src={coffee.image} alt={coffee.title} />
                     <br />
                     {
-                        alreadyFavorited()
-                        ?
-                        "Favorited"
-                        :
-                        <button onClick={() => addToFavorites(coffee)}>Add to Favorites</button>
+                        alreadyFavorited()? "Favorited" : <button onClick={() => handleClick(coffee)}>Add to Favorites</button>
                     }
                     <br /><br />
                 </div>
@@ -45,12 +50,9 @@ export default function DisplayCoffee({coffee}){
         }
     }
 
-//   console.log(favorites.find((m) => m.imdbID === "tt0112697"))
-
     const loading = () => {
         return <div>No coffee data to display... :(</div>
     }
 
     return coffee ? loaded() : loading()
 }
-
