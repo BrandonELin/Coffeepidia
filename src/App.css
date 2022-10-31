@@ -1,0 +1,12 @@
+.coffee-view{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.Display{
+  display: flex;
+  flex-direction: row;
+  font-size: 3vh;
+}

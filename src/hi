@@ -6,7 +6,7 @@ import NavBar from "./components/NavBar";
 import Favorites from "./pages/Favorites";
 import Home from "./pages/Home";
 import CoffeeDisplay from "./pages/CoffeeDisplay";
-import CoffeeList from "./pages/CoffeeList";
+import CoffeeList from "./pages/HotCoffee";
 import {Provider, useSelector} from 'react-redux'
 import { useState, useEffect, useReducer } from "react";
 

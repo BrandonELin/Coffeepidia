@@ -14,6 +14,7 @@ export default function Favorites({favorites, deleteCoffee, addCoffee}) {
                         deleteCoffee={deleteCoffee} 
                         addCoffee={addCoffee}
                         favorites={favorites}
+                        newid={i}
                     />
                 )}
             </div>

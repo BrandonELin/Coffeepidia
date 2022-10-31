@@ -2,14 +2,14 @@ import { useParams } from "react-router-dom";
 import DisplayCoffee from "../components/DisplayCoffee";
 import { useEffect } from "react"
 
-export default function CoffeeList({ coffeeList, getCoffee, addCoffee }){
+export default function HotCoffee({ coffeeList, getCoffee, addCoffee }){
     let params = useParams();
 
-    useEffect(() => {getCoffee(params.temp)},[])
+    useEffect(() => {getCoffee('hot')},[])
 
     // const loaded = () => {
     return (
-        <div>
+        <div className="coffee-view">
             {coffeeList.map((coffee) => {
                 return (
                     <DisplayCoffee 

@@ -5,7 +5,8 @@ import NavBar from "./components/NavBar";
 import Favorites from "./pages/Favorites";
 import Home from "./pages/Home";
 import CoffeeDisplay from "./pages/CoffeeDisplay";
-import CoffeeList from "./pages/CoffeeList";
+import HotCoffee from "./pages/HotCoffee";
+import IcedCoffee from "./pages/IcedCoffee";
 import {Provider, useSelector} from 'react-redux'
 import { useState, useEffect, useReducer } from "react";
 
@@ -67,7 +68,8 @@ function App() {
           />} 
         />
         <Route path="/favorites/:id" element={<CoffeeDisplay favorites={favorites} getCoffee={getCoffee} deleteCoffee={deleteCoffee}/>} />
-        <Route path='/drinks/:temp' element={<CoffeeList getCoffee={getCoffee} coffeeList={coffeeList} addCoffee={addCoffee}/> } />
+        <Route path='/drinks/hot' element={<HotCoffee getCoffee={getCoffee} coffeeList={coffeeList} addCoffee={addCoffee}/> } />
+        <Route path='/drinks/iced' element={<IcedCoffee getCoffee={getCoffee} coffeeList={coffeeList} addCoffee={addCoffee}/> } />
       </Routes>
     </div>
     
