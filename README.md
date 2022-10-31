@@ -26,7 +26,7 @@ My favorite part of the assignment was working with Bootstrap, it gave me a new 
 
 ## Plans for the future
 
-Definitely looking to develop my skills in bootstrap to make the website look better and looking to differentiate between drinks that you want to try and ones you know you like in your favorites list. Maybe add different kind of drinks.
+Definitely looking to develop my skills in bootstrap to make the website look better and looking to differentiate between drinks that you want to try and ones you know you like in your favorites list. Adding some kind of organization function.
 
 ## License
 
