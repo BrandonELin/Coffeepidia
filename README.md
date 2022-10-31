@@ -10,6 +10,10 @@ This is part of a project studying React and API implementation.
 
 Specifically about the API found here: https://sampleapis.com/api-list/coffee
 
+## Technologies Used
+
+ReactJS, Bootstrap 
+
 ## Challenges
 
 The hardest part of this assignment for me was trying to deploy the website as up til now, I still don't know how to deploy it.
