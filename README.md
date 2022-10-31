@@ -10,6 +10,10 @@ This is part of a project studying React and API implementation.
 
 Specifically about the API found here: https://sampleapis.com/api-list/coffee
 
+## Technologies Used
+
+ReactJS, Bootstrap 
+
 ## Challenges
 
 The hardest part of this assignment for me was trying to deploy the website as up til now, I still don't know how to deploy it.
@@ -22,7 +26,7 @@ My favorite part of the assignment was working with Bootstrap, it gave me a new 
 
 ## Plans for the future
 
-Definitely looking to develop my skills in bootstrap to make the website look better and looking to differentiate between drinks that you want to try and ones you know you like in your favorites list. Maybe add different kind of drinks.
+Definitely looking to develop my skills in bootstrap to make the website look better and looking to differentiate between drinks that you want to try and ones you know you like in your favorites list. Adding some kind of organization function.
 
 ## License
 
