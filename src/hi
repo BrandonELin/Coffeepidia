@@ -1,6 +1,7 @@
 import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import {Route,Routes,useNavigate} from "react-router-dom";
+import {addCoffee, emptyCoffees, deleteCoffee, favoriteCoffee} from './slices/CoffeeSlicer';
 import NavBar from "./components/NavBar";
 import Favorites from "./pages/Favorites";
 import Home from "./pages/Home";
@@ -27,7 +28,6 @@ function App() {
 
   let [coffee, setCoffee] = useState(null)
   let [favorites, dispatch] = useReducer(reducer, [])
-  let [coffeeList, setCoffeeList] = useState([])
 
   let navigate = useNavigate();
 
@@ -47,12 +47,20 @@ function App() {
       );
       const data = await response.json();
       console.log(data);
-      setCoffeeList(data);
+      return data;
     } catch (err) {
       console.log("ERROR! OH NO!!");
       console.log(err);
     }
   };
+
+  useEffect(() => {
+    if (!init) {
+      getCoffee("hot");
+      console.log("testing");
+      init = true;
+    }
+  }, []);
 
   return (
     <div className="App">
@@ -66,8 +74,8 @@ function App() {
             addCoffee={addCoffee}
           />} 
         />
-        <Route path="/favorites/:id" element={<CoffeeDisplay favorites={favorites} getCoffee={getCoffee} deleteCoffee={deleteCoffee}/>} />
-        <Route path='/drinks/:temp' element={<CoffeeList getCoffee={getCoffee} coffeeList={coffeeList} addCoffee={addCoffee}/> } />
+        <Route path="/favorites/:id" element={<CoffeeDisplay favorites={favorites} getCoffee={getCoffee}/>} />
+        <Route path='/drinks/:temp' element={<CoffeeList/>} />
       </Routes>
     </div>
     

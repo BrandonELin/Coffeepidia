@@ -1,28 +1,9 @@
 import { useLocation, Link } from "react-router-dom"
 import { useDispatch } from 'react-redux'
 
-
-export default function MovieDisplay({ coffee, favorites, deleteCoffee, addCoffee }) {
+export default function DisplayCoffee({ coffee, favorites, deleteCoffee, addCoffee }) {
 
     let location = useLocation()
-    let dispatch = useDispatch()
-
-    const alreadyFavorited = () => {
-        let check = favorites?.find((bean) => bean.title === coffee.title)
-        if (check) {
-            return true
-        } else {
-            return false
-        }
-    }
-
-    const handleDelete = (drink) => {
-        dispatch(deleteCoffee(drink))
-    }
-
-    const handleClick = (drink) => {
-        dispatch(addCoffee(drink))
-    }
 
     const loaded = () => {
         if (location.pathname === "/favorites") {
@@ -32,7 +13,7 @@ export default function MovieDisplay({ coffee, favorites, deleteCoffee, addCoffe
                         <img src={coffee.image} alt={coffee.title} />
                     </Link>
                     <br />
-                    <button onClick={() => handleDelete(coffee)}>Remove from Favorites</button>
+                    <button onClick={() => deleteCoffee(coffee)}>Remove from Favorites</button>
                 </div>
             )
         } else {
@@ -41,9 +22,7 @@ export default function MovieDisplay({ coffee, favorites, deleteCoffee, addCoffe
                     <h1>{coffee.title}</h1>
                     <img src={coffee.image} alt={coffee.title} />
                     <br />
-                    {
-                        alreadyFavorited()? "Favorited" : <button onClick={() => handleClick(coffee)}>Add to Favorites</button>
-                    }
+                    <button onClick={() => addCoffee(coffee)}>Add to Favorites</button>
                     <br /><br />
                 </div>
             )

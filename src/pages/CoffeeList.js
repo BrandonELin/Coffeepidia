@@ -1,31 +1,21 @@
 import { useParams } from "react-router-dom";
 import DisplayCoffee from "../components/DisplayCoffee";
+import { useEffect } from "react"
 
-export default function CoffeeList(){
+export default function CoffeeList({ coffeeList, getCoffee, addCoffee }){
     let params = useParams();
 
-    const getCoffee = async (temp) => {
-        try {
-          const response = await fetch(
-            `https://api.sampleapis.com/coffee/${temp}`
-          );
-          const data = await response.json();
-          console.log(data);
-          return data;
-        } catch (err) {
-          console.log("ERROR! OH NO!!");
-          console.log(err);
-        }
-    };
+    useEffect(() => {getCoffee(params.temp)},[])
 
     // const loaded = () => {
     return (
         <div>
-            {getCoffee(params.temp).map((coffee) => {
+            {coffeeList.map((coffee) => {
                 return (
                     <DisplayCoffee 
                         key={coffee.id}
                         coffee={coffee}
+                        addCoffee={addCoffee}
                     />
                 )
             })}

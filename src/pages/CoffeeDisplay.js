@@ -3,7 +3,6 @@ import { useParams, useNavigate } from "react-router-dom"
 export default function CoffeeDisplay({ favorites }) {
 
     let params = useParams()
-    let navigate = useNavigate()
 
     const coffee = favorites.filter((m) => params.id === m.id)
 

@@ -15,7 +15,7 @@ export default function NavBar() {
                         <Nav.Link as={Link} to="/drinks/hot">
                             Hot Drinks
                         </Nav.Link>
-                        <Nav.Link as={Link} to="/drinks/cold">
+                        <Nav.Link as={Link} to="/drinks/iced">
                             Cold Drinks
                         </Nav.Link>
                         <Nav.Link as={Link} to="/favorites">
