@@ -1,71 +1,29 @@
-# Getting Started with Create React App
+#CoffeEncyclopedia
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Description
 
-## Available Scripts
+Welcome to the the CoffeEncyclopedia.
 
-In the project directory, you can run:
+A website designed to help to help you de-mystify the different kind of coffee drinks there are out there.
 
-### `npm start`
+This is part of a project studying React and API implementation.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Specifically about the API found here: https://sampleapis.com/api-list/coffee
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Challenges
 
-### `npm test`
+The hardest part of this assignment for me was trying to deploy the website as up til now, I still don't know how to deploy it.
+Barring that, the most difficult part was keeping up with prop passing. There would be too many times where I would think that a function is available.
+only for it to be something I completely forgot to add in.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Favorite Part
 
-### `npm run build`
+My favorite part of the assignment was working with Bootstrap, it gave me a new interesting look at CSS and I'm excited to use it more in the future.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Plans for the future
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Definitely looking to develop my skills in bootstrap to make the website look better and looking to differentiate between drinks that you want to try and ones you know you like in your favorites list. Maybe add different kind of drinks.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## License
 
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
-# Coffeepidia
+[MIT] (https://choosealicense.com/licenses/mit/)
