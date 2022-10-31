@@ -10,8 +10,8 @@ export default function CoffeeDisplay({ favorites, deleteCoffee }) {
 
     return (
 
-        <div className="brown">
-            <Card style={{width: '100vw'}}>
+        <div className="brown" >
+            <Card style={{width: '100vw'}}  className='around bg-dark text-white'>
                 <Card.Title>
                     <h1>{coffee.title}</h1>
                 </Card.Title>

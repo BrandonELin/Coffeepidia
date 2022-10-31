@@ -18,7 +18,7 @@ export default function Favorites({favorites, deleteCoffee, addCoffee}) {
             )
         } else {
             return (
-                <p className="white">Start picking out some new favorites</p>
+                <h3 className="white">Start picking out some new favorites</h3>
             )
         }
     }
